@@ -17,13 +17,18 @@
 	flex-direction: column;
 	background-color: #282c34;
 	justify-content: space-between;
-	font-size: calc(10px + 2vmin);
+	font-size: 16px;
 	color: white;
 }
 
 .App-logo {
 	height: 40vmin;
 	pointer-events: none;
+}
+
+.error {
+	color: indianred;
+	font-weight: 700;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -36,6 +41,7 @@
 	width: 100%;
 	max-width: 1200px;
 	padding: 0 1rem;
+	margin: 0 auto;
 }
 
 a {

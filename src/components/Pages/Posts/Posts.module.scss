@@ -1,0 +1,26 @@
+.posts {
+	&List {
+		display: grid;
+		gap: 1rem;
+	}
+	
+	&Item {
+		display: grid;
+		gap: 1rem;
+		padding: 1rem;
+		border-radius: 0.5rem;
+		border: 2px solid var(--link-color);
+		&Title{
+			font-weight: 700;
+		}
+	}
+}
+
+@media (min-width: 1024px) {
+	.posts {
+		&List {
+			gap: 2rem;
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}

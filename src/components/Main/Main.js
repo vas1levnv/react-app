@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Main.module.scss'
 import {Route, Routes} from "react-router-dom";
 import Home from "../Pages/Home/Home";
-import Posts from "../Posts";
+import Posts from "../Pages/Posts/Posts";
 
 const Main = () => {
 	return (
