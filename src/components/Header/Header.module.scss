@@ -1,0 +1,8 @@
+.header {
+	padding: 1rem 0;
+	&List {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+}
