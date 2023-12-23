@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import s from './Posts.module.scss'
+import {Link} from "react-router-dom";
 
 const Posts = () => {
 	
@@ -15,7 +16,7 @@ const Posts = () => {
 					_limit: 9
 				}
 			})
-			await new Promise((resolve) => setTimeout(resolve, 2000))
+			await new Promise((resolve) => setTimeout(resolve, 500))
 			setPosts(response.data)
 		} catch(e) {
 			setError(e.message)
@@ -35,10 +36,10 @@ const Posts = () => {
 				: isLoading
 					? <div className="error">Идет загрузка...</div>
 					: <div className={s.postsList}>
-						{posts.map(el => <div key={el.id} className={s.postsItem}>
+						{posts.map(el => <Link to={'' + el.id} key={el.id} className={s.postsItem}>
 							<div className={s.postsItemTitle}>{el.title}</div>
 							<div>{el.body}</div>
-						</div>)}
+						</Link>)}
 					</div>}
 		</div>
 	);
