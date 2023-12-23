@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import axios from "axios";
+import CustomButton from "../UI/CustomButton/CustomButton";
+import Comments from "../Comments/Comments";
 
 const PostItem = () => {
 	const {id} = useParams()
@@ -19,18 +21,24 @@ const PostItem = () => {
 		}
 	}
 	
+	const handleClick = () => {
+		console.log('asfasf')
+	}
+	
 	useEffect(() => {
 		fetchPostData()
 	}, [])
 	
 	return (
 		<div>
-			{post 
+			{post
 				? <div>
-				<div>{post.title}</div>
-				<div>{post.body}</div>
-			</div> 
+					<div>{post.title}</div>
+					<div>{post.body}</div>
+				</div>
 				: <div>Нет поста</div>}
+			<CustomButton onClick={handleClick}>click here!</CustomButton>
+			<Comments/>
 		</div>
 	);
 };
