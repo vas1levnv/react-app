@@ -1,15 +1,17 @@
 import React from 'react';
-import logo from "../../logo.svg";
 import s from './Main.module.scss'
+import {Route, Routes} from "react-router-dom";
+import Home from "../Pages/Home/Home";
+import Posts from "../Posts";
 
 const Main = () => {
 	return (
 		<main className={s.main}>
 			<div className="container">
-				<img src={logo} className="App-logo" alt="logo"/>
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
+				<Routes>
+					<Route path="/" element={<Home/>}/>
+					<Route path="posts" element={<Posts/>}/>
+				</Routes>
 			</div>
 		</main>
 	);
