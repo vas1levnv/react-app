@@ -1,0 +1,16 @@
+button {
+	background: transparent;
+	border: 2px solid var(--link-color);
+	color: var(--link-color);
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	font-weight: 800;
+	transition: 0.2s ease;
+	cursor: pointer;
+	
+	&:hover {
+		background: var(--link-color-hover);
+		border-color: var(--link-color-hover);
+		color: white;
+	}
+}
