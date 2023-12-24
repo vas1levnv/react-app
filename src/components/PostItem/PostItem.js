@@ -9,6 +9,7 @@ const PostItem = () => {
 	const [post, setPost] = useState()
 	const [error, setError] = useState(null)
 	const [isLoading, setIsLoading] = useState(false)
+	const [isShowComment, setIsShowComment] = useState(false)
 	const fetchPostData = async() => {
 		try {
 			setIsLoading(true)
@@ -21,24 +22,26 @@ const PostItem = () => {
 		}
 	}
 	
-	const handleClick = () => {
-		console.log('asfasf')
-	}
-	
 	useEffect(() => {
 		fetchPostData()
 	}, [])
 	
 	return (
 		<div>
-			{post
-				? <div>
-					<div>{post.title}</div>
-					<div>{post.body}</div>
-				</div>
-				: <div>Нет поста</div>}
-			<CustomButton onClick={handleClick}>click here!</CustomButton>
-			<Comments/>
+			{isLoading
+				? <div>Идет загрузка...</div>
+				: post
+					? <div>
+						<div>{post.title}</div>
+						<div>{post.body}</div>
+						{
+							isShowComment
+								? <Comments/>
+								: <CustomButton onClick={() => setIsShowComment(true)}>Show comment</CustomButton>
+						}
+					</div>
+					: <div className="error">{error}</div>
+			}
 		</div>
 	);
 };
